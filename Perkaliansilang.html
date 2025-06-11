@@ -1,0 +1,2300 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Transformasi Linier &#8212; My sample book</title>
+
+
+
+        <script data-cfasync="false">
+            document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+            document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+        </script>
+
+        <!-- Loaded before other Sphinx assets -->
+        <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+        <link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+        <link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+
+        <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+        <link rel="preload" as="font" type="font/woff2" crossorigin
+            href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+        <link rel="preload" as="font" type="font/woff2" crossorigin
+            href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+        <link rel="preload" as="font" type="font/woff2" crossorigin
+            href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+        <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+        <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+        <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+        <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+        <link rel="stylesheet" type="text/css"
+            href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+        <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+        <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+
+        <!-- Pre-loaded scripts that we'll load fully later -->
+        <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+        <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+        <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+        <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="_static/copybutton.js?v=f281be69"></script>
+        <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="_static/design-tabs.js?v=f930bc37"></script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+        <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+        <script>window.MathJax = { "options": { "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area" } }</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+        <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks';</script>
+        <link rel="index" title="Index" href="genindex.html" />
+        <link rel="search" title="Search" href="search.html" />
+        <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
+        <link rel="prev" title="Markdown Files" href="markdown.html" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="docsearch:language" content="en" />
+    </head>
+
+
+    <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%"
+        data-default-mode="">
+
+
+
+        <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+        <div id="pst-scroll-pixel-helper"></div>
+
+        <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+            <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+
+        <input type="checkbox" class="sidebar-toggle" id="pst-primary-sidebar-checkbox" />
+        <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+
+        <input type="checkbox" class="sidebar-toggle" id="pst-secondary-sidebar-checkbox" />
+        <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+
+        <div class="search-button__wrapper">
+            <div class="search-button__overlay"></div>
+            <div class="search-button__search-container">
+                <form class="bd-search d-flex align-items-center" action="search.html" method="get">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="search" class="form-control" name="q" id="search-input"
+                        placeholder="Search this book..." aria-label="Search this book..." autocomplete="off"
+                        autocorrect="off" autocapitalize="off" spellcheck="false" />
+                    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+                </form>
+            </div>
+        </div>
+
+        <div class="pst-async-banner-revealer d-none">
+            <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+        </div>
+
+
+        <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+        </header>
+
+
+        <div class="bd-container">
+            <div class="bd-container__inner bd-page-width">
+
+
+
+                <div class="bd-sidebar-primary bd-sidebar">
+
+
+
+                    <div class="sidebar-header-items sidebar-primary__section">
+
+
+
+
+                    </div>
+
+                    <div class="sidebar-primary-items__start sidebar-primary__section">
+                        <div class="sidebar-primary-item">
+
+
+
+
+
+                            <a class="navbar-brand logo" href="intro.html">
+
+
+
+
+
+
+
+
+
+
+                                <img src="_static/logo.jpg" class="logo__image only-light"
+                                    alt="My sample book - Home" />
+                                <script>document.write(`<img src="_static/logo.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+
+
+                            </a>
+                        </div>
+                        <div class="sidebar-primary-item">
+
+                            <script>
+                                document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+                            </script>
+                        </div>
+                        <div class="sidebar-primary-item">
+                            <nav class="bd-links bd-docs-nav" aria-label="Main">
+                                <div class="bd-toc-item navbar-nav active">
+
+                                    <ul class="nav bd-sidenav bd-sidenav__home-link">
+                                        <li class="toctree-l1">
+                                            <a class="reference internal" href="intro.html">
+                                                Selamat Datang Di Komputasi Aljabar Linier
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="current nav bd-sidenav">
+                                       <ul class="current nav bd-sidenav">
+                                        <li class="toctree-l1"><a class="reference internal" href="markdown.html">Komputasi Aljabar Linier</a></li>
+                    <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Menyelesaikan Sistem Persamaan Linear Menggunakan Eliminasi</a></li>
+                    <li class="toctree-l1"><a class="reference internal" href="inversMatriks.html">Aljabar Linier</a></li>
+                    <li class="toctree-l1"><a class="reference internal" href="matrixTransform.html">Matrix Transformation</a></li>
+                    <li class="toctree-l1"><a class="reference internal" href="TransformasiMatriks2.html">Transformasi Linier</a></li>
+                    <li class="toctree-l1"><a class="reference internal" href="transformasi.html">Refleksi Transform</a></li>
+                    <li class="toctree-l1 current active"><a class="current reference internal" href="Perkaliansilang.html">Perkalian silang (cross product)</a></li>
+
+                                        
+
+                                    </ul>
+
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+
+
+                    <div class="sidebar-primary-items__end sidebar-primary__section">
+                    </div>
+
+                    <div id="rtd-footer-container"></div>
+
+
+                </div>
+
+                <main id="main-content" class="bd-main" role="main">
+
+
+
+                    <div class="sbt-scroll-pixel-helper"></div>
+
+                    <div class="bd-content">
+                        <div class="bd-article-container">
+
+                            <div class="bd-header-article d-print-none">
+                                <div class="header-article-items header-article__inner">
+
+                                    <div class="header-article-items__start">
+
+                                        <div class="header-article-item"><button
+                                                class="sidebar-toggle primary-toggle btn btn-sm"
+                                                title="Toggle primary sidebar" data-bs-placement="bottom"
+                                                data-bs-toggle="tooltip">
+                                                <span class="fa-solid fa-bars"></span>
+                                            </button></div>
+
+                                    </div>
+
+
+                                    <div class="header-article-items__end">
+
+                                        <div class="header-article-item">
+
+                                            <div class="article-header-buttons">
+
+
+
+
+
+                                                <div class="dropdown dropdown-source-buttons">
+                                                    <button class="btn dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                                        aria-label="Source repositories">
+                                                        <i class="fab fa-github"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+
+
+
+                                                        <li><a href="https://github.com/executablebooks/jupyter-book"
+                                                                target="_blank"
+                                                                class="btn btn-sm btn-source-repository-button dropdown-item"
+                                                                title="Source repository" data-bs-placement="left"
+                                                                data-bs-toggle="tooltip">
+
+
+                                                                <span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+                                                                <span class="btn__text-container">Repository</span>
+                                                            </a>
+                                                        </li>
+
+
+
+
+                                                        <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fnotebooks.html&body=Your%20issue%20content%20here."
+                                                                target="_blank"
+                                                                class="btn btn-sm btn-source-issues-button dropdown-item"
+                                                                title="Open an issue" data-bs-placement="left"
+                                                                data-bs-toggle="tooltip">
+
+
+                                                                <span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+                                                                <span class="btn__text-container">Open issue</span>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+
+
+
+
+
+
+                                                <div class="dropdown dropdown-download-buttons">
+                                                    <button class="btn dropdown-toggle" type="button"
+                                                        data-bs-toggle="dropdown" aria-expanded="false"
+                                                        aria-label="Download this page">
+                                                        <i class="fas fa-download"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+
+
+
+                                                        <li><a href="_sources/notebooks.ipynb" target="_blank"
+                                                                class="btn btn-sm btn-download-source-button dropdown-item"
+                                                                title="Download source file" data-bs-placement="left"
+                                                                data-bs-toggle="tooltip">
+
+
+                                                                <span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+                                                                <span class="btn__text-container">.ipynb</span>
+                                                            </a>
+                                                        </li>
+
+
+
+
+                                                        <li>
+                                                            <button onclick="window.print()"
+                                                                class="btn btn-sm btn-download-pdf-button dropdown-item"
+                                                                title="Print to PDF" data-bs-placement="left"
+                                                                data-bs-toggle="tooltip">
+
+
+                                                                <span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+                                                                <span class="btn__text-container">.pdf</span>
+                                                            </button>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+
+
+
+
+                                                <button onclick="toggleFullScreen()"
+                                                    class="btn btn-sm btn-fullscreen-button" title="Fullscreen mode"
+                                                    data-bs-placement="bottom" data-bs-toggle="tooltip">
+
+
+                                                    <span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+                                                </button>
+
+
+
+                                                <script>
+                                                    document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+                                                </script>
+
+
+                                                <script>
+                                                    document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+                                                </script>
+                                                <button class="sidebar-toggle secondary-toggle btn btn-sm"
+                                                    title="Toggle secondary sidebar" data-bs-placement="bottom"
+                                                    data-bs-toggle="tooltip">
+                                                    <span class="fa-solid fa-list"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <div id="jb-print-docs-body" class="onlyprint">
+                                <h1>Content with notebooks</h1>
+                                <!-- Table of contents -->
+                                <div id="print-main-content">
+                                    <div id="jb-print-toc">
+
+                                        <div>
+                                            <h2> Contents </h2>
+                                        </div>
+                                        <nav aria-label="Page">
+                                            <ul class="visible nav section-nav flex-column">
+                                                <li class="toc-h2 nav-item toc-entry"><a
+                                                        class="reference internal nav-link"
+                                                        href="#Tujuan Pembelajaran">Perkalian silang (cross product)</a></li>
+                                                <li class="toc-h2 nav-item toc-entry"><a
+                                                        class="reference internal nav-link"
+                                                        href="#konsep-dasar-matriks">Konsep Dasar Aljabar Matriks</a>
+                                                </li>
+                                                <li class="toc-h2 nav-item toc-entry"><a
+                                                        class="reference internal nav-link"
+                                                        href="#Tiga Jenis Operasi Matriks">Tiga Jenis Operasi
+                                                        Matriks</a></li>
+
+
+                                                <li class="toc-h2 nav-item toc-entry"><a
+                                                        class="reference internal nav-link" href="#Tugas">Tugas</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div id="searchbox"></div>
+                            <article class="bd-article">
+
+                                <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
+                                    <h1>Perkalian silang (cross Product) <a class="headerlink" href="#content-with-notebooks"
+                                            title="Link to this heading">#</a></h1>
+
+                                 
+                                            <section id="tujuan-pembelajaran">
+                                        <h2>Pengertian<a class="headerlink" href="#tujuan-pembelajaran"
+                                                title="Link to this heading">#</a></h2>
+                                        <p>Cross product atau hasil kali silang merupakan hasil kali antara dua vektor di ruang dimensi tiga (R3) yang menghasilkan vektor tegak lurus terhadap kedua vektor yang dikalikan. Atau dapat juga dikatakan bahwa perkalian silang antara dua vektor akan menghasilkan vektor baru yang arahnya tegak lurus dengan masing-masing vektor.
+
+<br>    Penentuan arah vektor pada perkalian silang dapat menggunakan kaidah tangan kanan yang melibatkan telapak tangan, empat jari, dan jempol/ibu jari. Di mana, telapak tangan menuju arah vektor pertama yang akan dikalikan dan empat jari menuju arah vektor kedua. Kemudian, arah vektor satuan hasil perkalian ditunjukkan oleh ibu jari.<br>
+                                            
+                                        <p>Perkalian silang dari dua vektor <b>u</b> dan <b>v</b> didefinisikan sebagai:</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">u</mi>
+        </mrow>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN">[</mo>
+          <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE">]</mo>
+        </mrow>
+        <mo>,</mo>
+        <mstyle scriptlevel="0">
+          <mspace width="1em"></mspace>
+        </mstyle>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">v</mi>
+        </mrow>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN">[</mo>
+          <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE">]</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+                                    <p>maka:</p>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">u</mi>
+        </mrow>
+        <mo>&#xD7;</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">v</mi>
+        </mrow>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN">[</mo>
+          <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>3</mn>
+                </msub>
+                <mo>&#x2212;</mo>
+                <msub>
+                  <mi>u</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>3</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>&#x2212;</mo>
+                <msub>
+                  <mi>u</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>1</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>2</mn>
+                </msub>
+                <mo>&#x2212;</mo>
+                <msub>
+                  <mi>u</mi>
+                  <mn>2</mn>
+                </msub>
+                <msub>
+                  <mi>v</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE">]</mo>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+
+                                    <p>Atau dalam bentuk determinan:</p>
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">u</mi>
+        </mrow>
+        <mo>&#xD7;</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mi mathvariant="bold">v</mi>
+        </mrow>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN">|</mo>
+          <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>i</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>j</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>k</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+              <mtd>
+                <msub>
+                  <mi>u</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>1</mn>
+                </msub>
+              </mtd>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>2</mn>
+                </msub>
+              </mtd>
+              <mtd>
+                <msub>
+                  <mi>v</mi>
+                  <mn>3</mn>
+                </msub>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>2</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>3</mn>
+        </msub>
+        <mo>&#x2212;</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>3</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>2</mn>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>i</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo>&#x2212;</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>1</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>3</mn>
+        </msub>
+        <mo>&#x2212;</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>3</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>j</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo>+</mo>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>1</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>2</mn>
+        </msub>
+        <mo>&#x2212;</mo>
+        <msub>
+          <mi>u</mi>
+          <mn>2</mn>
+        </msub>
+        <msub>
+          <mi>v</mi>
+          <mn>1</mn>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>k</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math>
+
+                                    </section>
+                                    <section id="Konsep Dasar Aljabar Matriks">
+                                        <h2>Sifat-sifat Perkalian Silang<a class="headerlink"
+                                                href="#konsep-dasar--Aljabar-matriks" title="Link to this heading">#</a>
+                                        </h2>
+                                        <p>1. Sifat Antikomutatif (Anticommutative Property)</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mo>&#x2212;</mo>
+                                        <mo stretchy="false">(</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo stretchy="false">)</mo>
+                                        </math>
+
+                                        <p>2. Sifat Distributif terhadap Penjumlahan (Distributive Properties)</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mo stretchy="false">(</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>+</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo stretchy="false">)</mo>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>w</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>w</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>+</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>w</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        </math>
+
+                                        <p>3. Sifat Asosiatif terhadap Perkalian Skalar</p>
+                                         <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mi>c</mi>
+                                            <mo stretchy="false">(</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mi>c</mi>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mi>c</mi>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            </math>
+                                        
+                                         <p>4.Sifat Ortogonalitas (Orthogonality Properties)</p>
+                                            <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mo stretchy="false">(</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>&#x22C5;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mn>0</mn>
+                                            </math>
+                                        
+                                        <p>5. Perkalian Silang Vektor dengan Dirinya Sendiri</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mn>0</mn>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            </math>
+
+                                        <p>6.Perkalian Silang dengan Vektor Nol</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mn>0</mn>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mn>0</mn>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            </math>
+
+                                        <p>7.Triple Scalar Product (Perkalian Titik dari Perkalian Silang)</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#x22C5;</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>w</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>=</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>v</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo stretchy="false">)</mo>
+                                            <mo>&#x22C5;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>w</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            </math>
+
+                                                   
+                                         
+
+                                     <section id="Konsep Dasar Aljabar Matriks">
+                                        <h2>Implementasi<a class="headerlink"
+                                                href="#konsep-dasar--Aljabar-matriks" title="Link to this heading">#</a>
+                                        </h2>
+
+                                        <h3>Luas Jajaran Genjang</h3>
+                                        <p>Secara geometri, luas jajaran genjang adalah <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mi>b</mi>
+  <mi>h</mi>
+</math>
+, di mana <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>b</mi>
+</math>
+ adalah panjang alas dan <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+</math>
+ adalah tinggi jajaran genjang, seperti yang ditunjukkan dalam Gambar (a).
+
+Ketika kita mendefinisikan aturan jajaran genjang penjumlahan vektor, dua vektor <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>u</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+</math>
+ dan <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>v</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+</math>
+ membentuk jajaran genjang jika ditarik dari titik awal yang sama, seperti dalam Gambar (b).
+
+Trigonometri mengatakan bahwa <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>h</mi>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>v</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>&#x3B8;</mi>
+  <mo stretchy="false">)</mo>
+</math>, sehingga luas jajaran genjang adalah:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>A</mi>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>u</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>v</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mi>sin</mi>
+  <mo data-mjx-texclass="NONE">&#x2061;</mo>
+  <mo stretchy="false">(</mo>
+  <mi>&#x3B8;</mi>
+  <mo stretchy="false">)</mo>
+  <mo>=</mo>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>u</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo>&#xD7;</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>v</mi>
+      <mo stretchy="false">&#x2192;</mo>
+    </mover>
+  </mrow>
+  <mo data-mjx-texclass="ORD" fence="false" stretchy="false">&#x2016;</mo>
+</math>
+
+
+
+
+
+
+                             
+
+
+                                    <section id="Tugas"></section>
+                                    <h2>Tugas Penyelesaian Soal<a class="headerlink" href="#Tugas" title="Link to this heading">#</a></h2>
+                                    <h5>Soal 1</h5>
+                                    Tentukan luas jajaran genjang yang ditentukan oleh vektor 
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mrow data-mjx-texclass="ORD">
+                                        <mover>
+                                        <mi>u</mi>
+                                        <mo stretchy="false">&#x2192;</mo>
+                                        </mover>
+                                    </mrow>
+                                    <mo>=</mo>
+                                    <mrow data-mjx-texclass="INNER">
+                                        <mo data-mjx-texclass="OPEN">[</mo>
+                                        <mtable columnspacing="1em" rowspacing="4pt">
+                                        <mtr>
+                                            <mtd>
+                                            <mn>1</mn>
+                                            </mtd>
+                                        </mtr>
+                                        <mtr>
+                                            <mtd>
+                                            <mn>2</mn>
+                                            </mtd>
+                                        </mtr>
+                                        </mtable>
+                                        <mo data-mjx-texclass="CLOSE">]</mo>
+                                    </mrow>
+                                    </math>
+                                    dan 
+                                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="INNER">
+                                            <mo data-mjx-texclass="OPEN">[</mo>
+                                            <mtable columnspacing="1em" rowspacing="4pt">
+                                            <mtr>
+                                                <mtd>
+                                                <mn>2</mn>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd>
+                                                <mn>1</mn>
+                                                </mtd>
+                                            </mtr>
+                                            </mtable>
+                                            <mo data-mjx-texclass="CLOSE">]</mo>
+                                        </mrow>
+                                        </math>
+
+                                        <h5>Penyelesaian:</h5>
+                                        Untuk <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                            <mrow data-mjx-texclass="ORD">
+                                            <mi mathvariant="double-struck">R</mi>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        </math>, luas jajaran genjang diberikan oleh:<br>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>&#x2212;</mo>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mo stretchy="false">|</mo>
+                                        </math>
+
+                                        <p>Substitusikan nilai:</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mn>1</mn>
+                                        <mo>&#x22C5;</mo>
+                                        <mn>1</mn>
+                                        <mo>&#x2212;</mo>
+                                        <mn>2</mn>
+                                        <mo>&#x22C5;</mo>
+                                        <mn>2</mn>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mn>1</mn>
+                                        <mo>&#x2212;</mo>
+                                        <mn>4</mn>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>&#x2212;</mo>
+                                        <mn>3</mn>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mn>3</mn>
+                                        </math>
+
+                                        <p><b>Jawaban: Luas = 3</b></p>
+
+
+                                        <h5>Soal 2</h5>
+                                        Tentukan luas jajaran genjang yang ditentukan oleh vektor 
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mi>u</mi>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mrow data-mjx-texclass="INNER">
+                                                <mo data-mjx-texclass="OPEN">[</mo>
+                                                <mtable columnspacing="1em" rowspacing="4pt">
+                                                <mtr>
+                                                    <mtd>
+                                                    <mn>2</mn>
+                                                    </mtd>
+                                                </mtr>
+                                                <mtr>
+                                                    <mtd>
+                                                    <mn>0</mn>
+                                                    </mtd>
+                                                </mtr>
+                                                </mtable>
+                                                <mo data-mjx-texclass="CLOSE">]</mo>
+                                            </mrow>
+                                            </math> 
+                                            dan 
+
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="INNER">
+                                            <mo data-mjx-texclass="OPEN">[</mo>
+                                            <mtable columnspacing="1em" rowspacing="4pt">
+                                            <mtr>
+                                                <mtd>
+                                                <mn>0</mn>
+                                                </mtd>
+                                            </mtr>
+                                            <mtr>
+                                                <mtd>
+                                                <mn>3</mn>
+                                                </mtd>
+                                            </mtr>
+                                            </mtable>
+                                            <mo data-mjx-texclass="CLOSE">]</mo>
+                                        </mrow>
+                                        </math>
+
+                                        <h5>Penyelesaian:</h5>
+                                        Untuk <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <msup>
+                                            <mrow data-mjx-texclass="ORD">
+                                            <mi mathvariant="double-struck">R</mi>
+                                            </mrow>
+                                            <mn>2</mn>
+                                        </msup>
+                                        </math>, luas jajaran genjang diberikan oleh:
+                                        <br>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>u</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>&#xD7;</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mi>v</mi>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>&#x2212;</mo>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mo stretchy="false">|</mo>
+                                        </math>
+
+                                        <p>Substitusikan nilai:</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <mo>&#x2212;</mo>
+                                        <msub>
+                                            <mi>u</mi>
+                                            <mn>2</mn>
+                                        </msub>
+                                        <msub>
+                                            <mi>v</mi>
+                                            <mn>1</mn>
+                                        </msub>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mn>2</mn>
+                                        <mo>&#x22C5;</mo>
+                                        <mn>3</mn>
+                                        <mo>&#x2212;</mo>
+                                        <mn>0</mn>
+                                        <mo>&#x22C5;</mo>
+                                        <mn>0</mn>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mn>6</mn>
+                                        <mo>&#x2212;</mo>
+                                        <mn>0</mn>
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mo stretchy="false">|</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mn>6</mn>
+                                        </math>
+
+                                        <p><b>Jawaban: Luas = 6</b></p>
+
+
+
+
+                                        <h5>Soal 3</h5>
+                                        <p>Tentukan luas segitiga dengan titik-titik sudut (0, 0, 0), (1, 3, -1), dan (2, 1, 1).</p>
+
+                                        <h5>Penyelesaian:</h5>
+                                        <p>Vektor <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mrow>
+                                                    <mi>A</mi>
+                                                    <mi>B</mi>
+                                                </mrow>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mi>B</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>A</mi>
+                                            <mo>=</mo>
+                                            <mo fence="false" stretchy="false">&#x27E8;</mo>
+                                            <mn>1</mn>
+                                            <mo>,</mo>
+                                            <mn>3</mn>
+                                            <mo>,</mo>
+                                            <mo>&#x2212;</mo>
+                                            <mn>1</mn>
+                                            <mo fence="false" stretchy="false">&#x27E9;</mo>
+                                            </math> </p>
+
+                                        <p>Vektor <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mrow>
+                                                    <mi>A</mi>
+                                                    <mi>C</mi>
+                                                </mrow>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mi>C</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>A</mi>
+                                            <mo>=</mo>
+                                            <mo fence="false" stretchy="false">&#x27E8;</mo>
+                                            <mn>2</mn>
+                                            <mo>,</mo>
+                                            <mn>1</mn>
+                                            <mo>,</mo>
+                                            <mn>1</mn>
+                                            <mo fence="false" stretchy="false">&#x27E9;</mo>
+                                            </math></p>
+
+                                        <p>Hitung perkalian silang:</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
+                                            <mtr>
+                                            <mtd>
+                                                <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                    <mrow>
+                                                    <mi>A</mi>
+                                                    <mi>B</mi>
+                                                    </mrow>
+                                                    <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                                </mrow>
+                                                <mo>&#xD7;</mo>
+                                                <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                    <mrow>
+                                                    <mi>A</mi>
+                                                    <mi>C</mi>
+                                                    </mrow>
+                                                    <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                                </mrow>
+                                                <mo>=</mo>
+                                                <mrow data-mjx-texclass="INNER">
+                                                <mo data-mjx-texclass="OPEN">|</mo>
+                                                <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+                                                    <mtr>
+                                                    <mtd>
+                                                        <mrow data-mjx-texclass="ORD">
+                                                        <mover>
+                                                            <mi>i</mi>
+                                                            <mo stretchy="false">^</mo>
+                                                        </mover>
+                                                        </mrow>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mrow data-mjx-texclass="ORD">
+                                                        <mover>
+                                                            <mi>j</mi>
+                                                            <mo stretchy="false">^</mo>
+                                                        </mover>
+                                                        </mrow>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mrow data-mjx-texclass="ORD">
+                                                        <mover>
+                                                            <mi>k</mi>
+                                                            <mo stretchy="false">^</mo>
+                                                        </mover>
+                                                        </mrow>
+                                                    </mtd>
+                                                    </mtr>
+                                                    <mtr>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>3</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mo>&#x2212;</mo>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    </mtr>
+                                                    <mtr>
+                                                    <mtd>
+                                                        <mn>2</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    <mtd>
+                                                        <mn>1</mn>
+                                                    </mtd>
+                                                    </mtr>
+                                                </mtable>
+                                                <mo data-mjx-texclass="CLOSE">|</mo>
+                                                </mrow>
+                                                <mo>=</mo>
+                                                <mo stretchy="false">(</mo>
+                                                <mn>3</mn>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>1</mn>
+                                                <mo>&#x2212;</mo>
+                                                <mo stretchy="false">(</mo>
+                                                <mo>&#x2212;</mo>
+                                                <mn>1</mn>
+                                                <mo stretchy="false">)</mo>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>1</mn>
+                                                <mo stretchy="false">)</mo>
+                                                <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                    <mi>i</mi>
+                                                    <mo stretchy="false">^</mo>
+                                                </mover>
+                                                </mrow>
+                                                <mo>&#x2212;</mo>
+                                                <mo stretchy="false">(</mo>
+                                                <mn>1</mn>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>1</mn>
+                                                <mo>&#x2212;</mo>
+                                                <mo stretchy="false">(</mo>
+                                                <mo>&#x2212;</mo>
+                                                <mn>1</mn>
+                                                <mo stretchy="false">)</mo>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>2</mn>
+                                                <mo stretchy="false">)</mo>
+                                                <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                    <mi>j</mi>
+                                                    <mo stretchy="false">^</mo>
+                                                </mover>
+                                                </mrow>
+                                                <mo>+</mo>
+                                                <mo stretchy="false">(</mo>
+                                                <mn>1</mn>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>1</mn>
+                                                <mo>&#x2212;</mo>
+                                                <mn>3</mn>
+                                                <mo>&#x22C5;</mo>
+                                                <mn>2</mn>
+                                                <mo stretchy="false">)</mo>
+                                                <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                    <mi>k</mi>
+                                                    <mo stretchy="false">^</mo>
+                                                </mover>
+                                                </mrow>
+                                            </mtd>
+                                            </mtr>
+                                        </mtable>
+                                        </math>
+
+                                        <p>Luas segitiga:</p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                                        <mi>L</mi>
+                                        <mo>=</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                        <mrow data-mjx-texclass="INNER">
+                                            <mo data-mjx-texclass="OPEN" symmetric="true">&#x2016;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                                <mrow>
+                                                <mi>A</mi>
+                                                <mi>B</mi>
+                                                </mrow>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                            </mrow>
+                                            <mo>&#xD7;</mo>
+                                            <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                                <mrow>
+                                                <mi>A</mi>
+                                                <mi>C</mi>
+                                                </mrow>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                            </mrow>
+                                            <mo data-mjx-texclass="CLOSE" symmetric="true">&#x2016;</mo>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                        <msqrt>
+                                            <msup>
+                                            <mn>4</mn>
+                                            <mn>2</mn>
+                                            </msup>
+                                            <mo>+</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mo>&#x2212;</mo>
+                                            <mn>3</mn>
+                                            <msup>
+                                            <mo stretchy="false">)</mo>
+                                            <mn>2</mn>
+                                            </msup>
+                                            <mo>+</mo>
+                                            <mo stretchy="false">(</mo>
+                                            <mo>&#x2212;</mo>
+                                            <mn>5</mn>
+                                            <msup>
+                                            <mo stretchy="false">)</mo>
+                                            <mn>2</mn>
+                                            </msup>
+                                        </msqrt>
+                                        <mo>=</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                        <msqrt>
+                                            <mn>16</mn>
+                                            <mo>+</mo>
+                                            <mn>9</mn>
+                                            <mo>+</mo>
+                                            <mn>25</mn>
+                                        </msqrt>
+                                        <mo>=</mo>
+                                        <mfrac>
+                                            <mn>1</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                        <msqrt>
+                                            <mn>50</mn>
+                                        </msqrt>
+                                        <mo>=</mo>
+                                        <mfrac>
+                                            <mrow>
+                                            <mn>5</mn>
+                                            <msqrt>
+                                                <mn>2</mn>
+                                            </msqrt>
+                                            </mrow>
+                                            <mn>1</mn>
+                                        </mfrac>
+                                        </math>
+
+                                        <p><b>Jawaban: Luas = <math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mfrac>
+                                                <mrow>
+                                                <mn>5</mn>
+                                                <msqrt>
+                                                    <mn>2</mn>
+                                                </msqrt>
+                                                </mrow>
+                                                <mn>1</mn>
+                                            </mfrac>
+                                            </math></b></p>
+
+                                    
+                                     <h5>Soal 4</h5>
+                                     <p>Tentukan luas segitiga dengan titik-titik sudut (5, 2, -1), (3, 6, 2), dan (1, 0, 4)</p>
+                                     <h5>Penyelesaian:</h5>
+                                     <p><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                        <mrow data-mjx-texclass="ORD">
+                                            <mover>
+                                            <mrow>
+                                                <mi>A</mi>
+                                                <mi>B</mi>
+                                            </mrow>
+                                            <mo stretchy="false">&#x2192;</mo>
+                                            </mover>
+                                        </mrow>
+                                        <mo>=</mo>
+                                        <mi>B</mi>
+                                        <mo>&#x2212;</mo>
+                                        <mi>A</mi>
+                                        <mo>=</mo>
+                                        <mo fence="false" stretchy="false">&#x27E8;</mo>
+                                        <mo>&#x2212;</mo>
+                                        <mn>2</mn>
+                                        <mo>,</mo>
+                                        <mn>4</mn>
+                                        <mo>,</mo>
+                                        <mn>3</mn>
+                                        <mo fence="false" stretchy="false">&#x27E9;</mo>
+                                        </math></p>
+                                        <p><math xmlns="http://www.w3.org/1998/Math/MathML">
+                                            <mrow data-mjx-texclass="ORD">
+                                                <mover>
+                                                <mrow>
+                                                    <mi>A</mi>
+                                                    <mi>C</mi>
+                                                </mrow>
+                                                <mo stretchy="false">&#x2192;</mo>
+                                                </mover>
+                                            </mrow>
+                                            <mo>=</mo>
+                                            <mi>C</mi>
+                                            <mo>&#x2212;</mo>
+                                            <mi>A</mi>
+                                            <mo>=</mo>
+                                            <mo fence="false" stretchy="false">&#x27E8;</mo>
+                                            <mo>&#x2212;</mo>
+                                            <mn>4</mn>
+                                            <mo>,</mo>
+                                            <mo>&#x2212;</mo>
+                                            <mn>2</mn>
+                                            <mo>,</mo>
+                                            <mn>5</mn>
+                                            <mo fence="false" stretchy="false">&#x27E9;</mo>
+                                            </math></p>
+                                        <p>Perkalian silang:</p>
+                                        <p>
+                                        <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mtable displaystyle="true" columnalign="right" columnspacing="0em" rowspacing="3pt">
+    <mtr>
+      <mtd>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mrow>
+              <mi>A</mi>
+              <mi>B</mi>
+            </mrow>
+            <mo stretchy="false">&#x2192;</mo>
+          </mover>
+        </mrow>
+        <mo>&#xD7;</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mrow>
+              <mi>A</mi>
+              <mi>C</mi>
+            </mrow>
+            <mo stretchy="false">&#x2192;</mo>
+          </mover>
+        </mrow>
+        <mo>=</mo>
+        <mrow data-mjx-texclass="INNER">
+          <mo data-mjx-texclass="OPEN">|</mo>
+          <mtable columnalign="center" columnspacing="1em" rowspacing="4pt">
+            <mtr>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>i</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>j</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+              <mtd>
+                <mrow data-mjx-texclass="ORD">
+                  <mover>
+                    <mi>k</mi>
+                    <mo stretchy="false">^</mo>
+                  </mover>
+                </mrow>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+              </mtd>
+              <mtd>
+                <mn>4</mn>
+              </mtd>
+              <mtd>
+                <mn>3</mn>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>&#x2212;</mo>
+                <mn>4</mn>
+              </mtd>
+              <mtd>
+                <mo>&#x2212;</mo>
+                <mn>2</mn>
+              </mtd>
+              <mtd>
+                <mn>5</mn>
+              </mtd>
+            </mtr>
+          </mtable>
+          <mo data-mjx-texclass="CLOSE">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mn>4</mn>
+        <mo>&#x22C5;</mo>
+        <mn>5</mn>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+        <mo>&#x22C5;</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>i</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo>&#x2212;</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo>&#x22C5;</mo>
+        <mn>5</mn>
+        <mo>&#x2212;</mo>
+        <mn>3</mn>
+        <mo>&#x22C5;</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>j</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+        <mo>+</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo>&#x22C5;</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>2</mn>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mo>&#x22C5;</mo>
+        <mo stretchy="false">(</mo>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mrow data-mjx-texclass="ORD">
+          <mover>
+            <mi>k</mi>
+            <mo stretchy="false">^</mo>
+          </mover>
+        </mrow>
+      </mtd>
+    </mtr>
+  </mtable>
+</math></p>
+
+<p><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mo>=</mo>
+  <mo stretchy="false">(</mo>
+  <mn>20</mn>
+  <mo>+</mo>
+  <mn>6</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>i</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>&#x2212;</mo>
+  <mo stretchy="false">(</mo>
+  <mo>&#x2212;</mo>
+  <mn>10</mn>
+  <mo>+</mo>
+  <mn>12</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>j</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <mo stretchy="false">(</mo>
+  <mn>4</mn>
+  <mo>+</mo>
+  <mn>16</mn>
+  <mo stretchy="false">)</mo>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>k</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>=</mo>
+  <mn>26</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>i</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>&#x2212;</mo>
+  <mn>2</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>j</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+  <mo>+</mo>
+  <mn>20</mn>
+  <mrow data-mjx-texclass="ORD">
+    <mover>
+      <mi>k</mi>
+      <mo stretchy="false">^</mo>
+    </mover>
+  </mrow>
+</math></p>
+
+<p>Luas segitiga:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mi>L</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN" symmetric="true">&#x2016;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mrow>
+          <mi>A</mi>
+          <mi>B</mi>
+        </mrow>
+        <mo stretchy="false">&#x2192;</mo>
+      </mover>
+    </mrow>
+    <mo>&#xD7;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mover>
+        <mrow>
+          <mi>A</mi>
+          <mi>C</mi>
+        </mrow>
+        <mo stretchy="false">&#x2192;</mo>
+      </mover>
+    </mrow>
+    <mo data-mjx-texclass="CLOSE" symmetric="true">&#x2016;</mo>
+  </mrow>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <msqrt>
+    <msup>
+      <mn>26</mn>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <mo stretchy="false">(</mo>
+    <mo>&#x2212;</mo>
+    <mn>2</mn>
+    <msup>
+      <mo stretchy="false">)</mo>
+      <mn>2</mn>
+    </msup>
+    <mo>+</mo>
+    <msup>
+      <mn>20</mn>
+      <mn>2</mn>
+    </msup>
+  </msqrt>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <msqrt>
+    <mn>676</mn>
+    <mo>+</mo>
+    <mn>4</mn>
+    <mo>+</mo>
+    <mn>400</mn>
+  </msqrt>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+  <msqrt>
+    <mn>1080</mn>
+  </msqrt>
+  <mo>=</mo>
+  <mfrac>
+    <msqrt>
+      <mn>1080</mn>
+    </msqrt>
+    <mn>2</mn>
+  </mfrac>
+</math>
+
+<p>Sederhanakan:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msqrt>
+    <mn>1080</mn>
+  </msqrt>
+  <mo>=</mo>
+  <msqrt>
+    <mn>36</mn>
+    <mo>&#x22C5;</mo>
+    <mn>30</mn>
+  </msqrt>
+  <mo>=</mo>
+  <mn>6</mn>
+  <msqrt>
+    <mn>30</mn>
+  </msqrt>
+</math>
+<p><b>Jawaban: Luas = <math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>3</mn>
+  <msqrt>
+    <mn>30</mn>
+  </msqrt>
+</math></b></p>
+
+
+
+
+                                    
+
+
+
+
+
+
+
+
+
+
+
+        
+
+                                     
+                                            
+                                            
+
+
+                                        
+
+                                        </section>
+                                    </section>
+
+                                    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+                                    <script>kernelName = 'python3'</script>
+
+                            </article>
+
+
+
+
+
+
+                            <footer class="prev-next-footer d-print-none">
+
+                                <div class="prev-next-area">
+                                    <a class="left-prev" href="transformasi.html" title="previous page">
+                                        <i class="fa-solid fa-angle-left"></i>
+                                        <div class="prev-next-info">
+                                            <p class="prev-next-subtitle">previous</p>
+                                            <p class="prev-next-title">Refleksi Transform</p>
+                                        </div>
+                                    </a>
+
+                            </footer>
+
+                        </div>
+
+
+
+                        <div class="bd-sidebar-secondary bd-toc">
+                            <div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+                                <div class="sidebar-secondary-item">
+                                    <div class="page-toc tocsection onthispage">
+                                        <i class="fa-solid fa-list"></i> Contents
+                                    </div>
+                                    <nav class="bd-toc-nav page-toc">
+                                        <ul class="visible nav section-nav flex-column">
+
+                                            <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link"
+                                                    href="#Tujuan Pembelajaran">Tujuan Pembelajaran</a></li>
+                                            <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link"
+                                                    href="#Konsep Dasar Matriks">Pengertian</a></li>
+                                                    
+                                            <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link"
+                                                    href="#Bentuk Eselon Baris dan Eselon Baris Tereduksi">Sifat-sifat Perkalian Silang</a></li>
+                                            <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link"
+                                                    href="#Tiga Jenis Operasi Baris Elementer">Implementasi</a></li>
+                                            <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link"
+                                                    href="#Tugas">Tugas Penyelesaian Soal
+                                                </a></li>
+
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <footer class="bd-footer-content">
+
+                        <div class="bd-footer-content__inner container">
+
+                            <div class="footer-item">
+
+                                <p class="component-author">
+                                    By The Mahasiswa UTM
+                                </p>
+
+                            </div>
+
+                            <div class="footer-item">
+
+
+                                <p class="copyright">
+
+                                    © Copyright 2023.
+                                    <br />
+
+                                </p>
+
+                            </div>
+
+                            <div class="footer-item">
+
+                            </div>
+
+                            <div class="footer-item">
+
+                            </div>
+
+                        </div>
+                    </footer>
+
+
+                </main>
+            </div>
+        </div>
+
+        <!-- Scripts loaded after <body> so the DOM is not blocked -->
+        <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+        <script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+        <footer class="bd-footer">
+        </footer>
+    </body>
+
+</html>
